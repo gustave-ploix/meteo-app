@@ -1,0 +1,33 @@
+.boussolePage {
+    width: 99%;
+    height: 99%;
+    // border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0px;
+}
+
+.boussole {
+    width: 350px;
+    height: 350px;
+    border-radius: 50% 0% 50% 50%;
+    border: 2px solid blue;
+    z-index: 0;
+    background-color: #FF715B;
+    transition: all 1s ease-in-out;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    
+}
+
+.informations {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
