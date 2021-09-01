@@ -1,27 +1,44 @@
-import React, { useEffect } from 'react';
-import { useParams } from 'react-router';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { fetchAPI } from "../../services/fetchAPI";
 
-import { fetchAPI } from '../../services/fetchAPI'
+import "./dashboard.scss";
 
-export default function Dashboard (){
+import Boussole from "../../components/Boussole";
+import Horloge from "../../components/Horloge";
+import Background from "../../components/Background";
 
-    const { zipSlug } = useParams()
+export default function Dashboard() {
+  const { zipSlug } = useParams();
+  const [data, setData] = useState([]);
 
-    const fetch = async () => {
-        try {
-            const reponse = fetchAPI(`https://api.weatherbit.io/v2.0/current?key=${process.env.REACT_APP_API_KEY}&postal_code=${zipSlug}&country=FR`)
-        } catch (error) {
-            console.error(error)
-        }
+  const fetch = async () => {
+    try {
+      const reponse = await fetchAPI(
+        `https://api.weatherbit.io/v2.0/current?key=${process.env.REACT_APP_API_KEY}&postal_code=${zipSlug}&country=FR&lang=fr`
+      );
+      setData(reponse.data[0]);
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    return(
+  useEffect(() => {
+    fetch();
+  }, []);
 
-        <div>
-            Dashboard for {zipSlug}
-            <button onClick={fetch}>bla</button>
-        </div>
-
-    )
-
+  return (
+    <>
+    <div className="background">
+        <Background sunDown={data.sunset} sunUp={data.sunrise} />
+    </div>
+    <div id="dashboardPage">
+      Dashboard for {data.city_name}
+      <Horloge />
+      <div className="centered">
+        <Boussole>{data}</Boussole>
+      </div>
+    </div>
+    </>
+  );
 }
