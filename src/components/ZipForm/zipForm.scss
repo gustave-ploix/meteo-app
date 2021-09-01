@@ -1,0 +1,46 @@
+
+.input {
+    height: 28px;
+    border: none;
+    background-color: lightcyan;
+    border-radius: 5px;
+    outline: none;
+
+    &.error {
+        background-color: darken(#FF715B, 15);
+        color: white;
+    }
+}
+
+
+
+.visible {
+    color: red;
+}
+
+.invisible {
+    opacity: 0;
+    pointer-events: none;
+}
+
+form {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.submit {
+    margin-left: 10px;
+    border: none;
+    height: 28px;
+    width: 28px;
+    border-radius: 50px;
+    background-color: darken(#FF715B, 5);
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+
+    &:hover {
+        background-color: darken(#FF715B, 7);
+    }
+}
