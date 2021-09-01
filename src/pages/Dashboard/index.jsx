@@ -29,16 +29,16 @@ export default function Dashboard() {
 
   return (
     <>
-    <div className="background">
+      <div className="background">
         <Background sunDown={data.sunset} sunUp={data.sunrise} />
-    </div>
-    <div id="dashboardPage">
-      Dashboard for {data.city_name}
-      <Horloge />
-      <div className="centered">
-        <Boussole>{data}</Boussole>
       </div>
-    </div>
+      <div id="dashboardPage">
+        Dashboard for {data.city_name}
+        <Horloge />
+        <div className="centered">
+          <Boussole>{data}</Boussole>
+        </div>
+      </div>
     </>
   );
 }
