@@ -22,7 +22,7 @@ export default function App (){
                     <Route path="/" exact>
                         <ZipSelection zip={zip} setZip={setZip}/>
                     </Route>
-                    <Route path="/dashboard">
+                    <Route path="/dashboard/:zipSlug">
                         <Dashboard />
                     </Route>
                 </Switch>
