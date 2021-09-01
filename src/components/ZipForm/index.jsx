@@ -26,15 +26,19 @@ export default function ZipForm ({ zip, setZip }){
 
     return(
 
-        <form onSubmit={handleSubmit}>
+        <form action={`/dashboard/` + zip}
+         onSubmit={handleSubmit}>
+
             <input
             className={valid ? "input" : "input error"}
             placeholder="entrez votre code postal"
             onChange={handleChange}
             type="text" />
+
             <input className="submit"
             type="submit" value="=>" />
             <p className={valid ? "invisible" : "visible"}>Veuillez entrer un code postal valide</p>
+        
         </form>
 
     )
