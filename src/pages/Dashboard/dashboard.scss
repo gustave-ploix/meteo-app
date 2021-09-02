@@ -38,10 +38,7 @@ $font: 'Work Sans', sans-serif;
     flex-direction: column;
     align-items: center;
     transform: translateX(-50%);
-
-    // @media(max-width: 540px) {
-    //    min-width: 300px;
-    // }
+    
     @media(max-width: 360px) {
         min-width: 220px;
     }
@@ -61,6 +58,8 @@ $font: 'Work Sans', sans-serif;
         @media(max-width: 360px) {
             font-size: 0.9em;
         }
-
+    }
+    .night {
+        color: white !important;
     }
 }

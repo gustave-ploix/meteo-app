@@ -13,6 +13,10 @@ export default function Dashboard() {
   const [data, setData] = useState([]);
   const [load, setLoad] = useState(false)
 
+  const date = new Date();
+  const hour = date.getHours();
+  let timeInformation = "";
+
   const fetch = async () => {
     try {
       const reponse = await fetchAPI(
@@ -33,6 +37,17 @@ export default function Dashboard() {
     return () => clearTimeout(timer)
   }, []);
 
+  if( hour === 22 ||
+      hour === 23 ||
+      hour === 0  ||
+      hour === 1  ||
+      hour === 2  ||
+      hour === 3  ||
+      hour === 4  ||
+      hour === 5) {
+      timeInformation = "night"
+    }
+
   return (
     <>
       <div className="background">
@@ -45,10 +60,10 @@ export default function Dashboard() {
       </div>
       <div class={load ? "visible" : "notVisible"}>
         <div className="elements">
-          <h1>
+          <h1 className={`${timeInformation}`}>
               Bienvenue à {data.city_name}, il fait {data.temp}°C
           </h1>
-          <Horloge />
+          <Horloge timeInformation={timeInformation} />
         </div>
         <div className="centered">
           <Boussole>{data}</Boussole>
