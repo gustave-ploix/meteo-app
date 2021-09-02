@@ -30,11 +30,34 @@ $font: 'Work Sans', sans-serif;
 }
 
 .elements {
+   
     position: absolute;
+    margin-top: 50px;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translateX(-50%);
+
+    // @media(max-width: 540px) {
+    //    min-width: 300px;
+    // }
+    @media(max-width: 360px) {
+        min-width: 220px;
+    }
 
     h1{
         color: gray;
+
+        @media(max-width: 900px) {
+            font-size: 1.4em;
+        }
+        @media(max-width: 630px) {
+            font-size: 1.2em;
+        }
+        @media(max-width: 564px) {
+            font-size: 0.8em;
+        }
+        @media(max-width: 360px) {
+            font-size: 0.9em;
+        }
+
     }
 }
