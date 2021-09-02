@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import './zipForm.scss'
 
@@ -16,7 +16,7 @@ export default function ZipForm ({ zip, setZip }){
         
         if(zipRegex.test(zip)){
             console.log("ok");
-            setValid(true)
+            setValid(true);
         } else {
             e.preventDefault()
             console.log("nope");
@@ -26,7 +26,7 @@ export default function ZipForm ({ zip, setZip }){
 
     return(
 
-        <form action={`/dashboard/` + zip}
+        <form action={`/dashboard/${zip}`}
          onSubmit={handleSubmit}>
 
             <input
