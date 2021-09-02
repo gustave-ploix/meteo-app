@@ -1,5 +1,45 @@
-.plusFour {
-    background-color: blue;
+
+.bg {
+    width: 100vw;
     height: 100vh;
-    z-index: -10;
+    background-color: #FF715B;
+    transition: all 0.3s ease-in-out;
+
+    &.cloudZero {
+      background-color: #0ad6ff;
+    }
+    &.cloudOne {
+        background-color: #85EBFF;
+    }
+    &.cloudTwo {
+        background-color: #C2F5FF;
+    }
+    &.cloudThree {
+        background-color: #EBFCFF;
+    }
+    &.cloudFour {
+        background-color: #EAEAEC;
+    }
+    &.cloudFive {
+        background-color: #DFDFE2;
+    }
+    &.cloudSix {
+        background-color: #D4D4D8;
+    }
+    &.cloudSeven {
+        background-color: #C9C9CF;
+    }
+    &.cloudEight {
+        background-color: #BEBEC5;
+    }
+    &.cloudNine {
+        background-color: #B3B3BC;
+    }
+
+    &.night {
+        background-color: #022864;
+    }
+
 }
+
+
