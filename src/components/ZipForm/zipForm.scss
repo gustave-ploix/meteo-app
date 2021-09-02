@@ -12,6 +12,16 @@
     }
 }
 
+form {
+    position: relative;
+    left: 25px;
+    margin: 0;
+
+    @media(max-width: 450px){
+        left: 10px;
+        width: 220px;
+    }
+}
 
 .visible {
     color: red;

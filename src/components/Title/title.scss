@@ -2,6 +2,9 @@
     margin: 0;
     font-size: 3.6em;
     position: relative;
-    right: 25px;
-    display: inline;    
+    display: inline;
+    
+    @media(max-width: 450px) {
+        font-size: 3em;
+    }
 }
