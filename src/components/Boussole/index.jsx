@@ -1,31 +1,45 @@
-import React from 'react';
+import React from "react";
 
-import './boussole.scss'
+import "./boussole.scss";
 
-export default function Boussole (props){
+export default function Boussole(props) {
+    const data = props.children;
 
-    const data = props.children
+    const windSpeed = parseInt(data.wind_spd * 3.6);
 
-    const windSpeed = parseInt(data.wind_spd * 3.6)
+    const direction = data.wind_dir - 45;
+    console.log(-Math.abs(direction));
+    console.log("normal : " + direction);
 
-    console.log(data);
+    const invertRotation = () => {
+        if (direction > 0) {
+            return -Math.abs(direction);
+        } else if (direction < 0) {
+            return Math.abs(direction);
+        }
+    };
 
-    return(
+    console.log(invertRotation());
 
+    return (
         <>
-        <div
-        className="boussolePage">
-            <div className="boussole"
-             style={{transform: `rotate(${data.wind_dir - 45}deg)`}}></div>
-        </div>
-
-        <div className="informations">
-            <h1>le vent souffle à : <br />{windSpeed}Km/h, vers :</h1>
-            <h1>{data.wind_cdir_full}</h1>
-            <h1></h1>
-        </div>
-
+            <div className="boussolePage">
+                <div
+                    className="boussole"
+                    style={{ transform: `rotate(${direction}deg)` }}
+                >
+                    <div
+                        className="informations"
+                        style={{ transform: `rotate(${invertRotation()}deg)` }}
+                    >
+                        <h1>
+                            le vent souffle à : <br />
+                            {windSpeed}Km/h, vers :
+                        </h1>
+                        <h1>{data.wind_cdir_full}</h1>
+                    </div>
+                </div>
+            </div>
         </>
-    )
-
+    );
 }
