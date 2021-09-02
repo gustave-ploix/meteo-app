@@ -7,7 +7,7 @@ export default function Boussole(props) {
 
     const windSpeed = parseInt(data.wind_spd * 3.6);
 
-    const direction = data.wind_dir - 45;
+    const direction = data.wind_dir - 25;
     console.log(-Math.abs(direction));
     console.log("normal : " + direction);
 
