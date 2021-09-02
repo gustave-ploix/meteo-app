@@ -2,28 +2,28 @@ import React, { useEffect, useState } from 'react';
 
 import './horloge.scss'
 
-export default function  ({ timeInformation }){
+export default function Horloge({ timeInformation }) {
 
-    const [time, setTime] = useState()
-    
+    const [time, setTime] = useState();
+
     useEffect(() => {
-        
-        const interval = setInterval(()=> {
-            const date = new Date()
+
+        const interval = setInterval(() => {
+            const date = new Date();
             const hour = date.getHours();
             const minuts = date.getMinutes();
             const seconds = date.getSeconds();
-            const timeConstruct = hour + ":" + minuts + ":" + seconds
-            setTime(timeConstruct)
+            const timeConstruct = hour + ":" + minuts + ":" + seconds;
+            setTime(timeConstruct);
         }, 1000)
-        return () => clearInterval(interval)
-    },[])
+        return () => clearInterval(interval);
+    }, [])
 
 
-    return(
+    return (
 
         <h1 className={`${timeInformation}`}
-         id="horloge">
+            id="horloge">
             {time}
         </h1>
 

@@ -25,28 +25,28 @@ export default function Dashboard() {
       setData(reponse.data[0]);
     } catch (error) {
       console.error(error);
-    }
+    };
   };
 
   useEffect(() => {
     fetch();
 
     const timer = setTimeout(() => {
-      setLoad(true)
-    }, 500)
-    return () => clearTimeout(timer)
+      setLoad(true);
+    }, 500);
+    return () => clearTimeout(timer);
   }, []);
 
-  if( hour === 22 ||
-      hour === 23 ||
-      hour === 0  ||
-      hour === 1  ||
-      hour === 2  ||
-      hour === 3  ||
-      hour === 4  ||
-      hour === 5) {
-      timeInformation = "night"
-    }
+  if (hour === 22 ||
+    hour === 23 ||
+    hour === 0 ||
+    hour === 1 ||
+    hour === 2 ||
+    hour === 3 ||
+    hour === 4 ||
+    hour === 5) {
+    timeInformation = "night";
+  };
 
   return (
     <>
@@ -61,7 +61,7 @@ export default function Dashboard() {
       <div class={load ? "visible" : "notVisible"}>
         <div className="elements">
           <h1 className={`${timeInformation}`}>
-              Bienvenue à {data.city_name}, il fait {data.temp}°C
+            Bienvenue à {data.city_name}, il fait {data.temp}°C
           </h1>
           <Horloge timeInformation={timeInformation} />
         </div>

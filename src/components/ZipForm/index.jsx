@@ -7,7 +7,7 @@ export default function ZipForm({ zip, setZip }) {
 
   let history = useHistory();
 
-  let submit = useRef()
+  let submit = useRef();
 
   const [valid, setValid] = useState(true);
 
@@ -18,10 +18,10 @@ export default function ZipForm({ zip, setZip }) {
   const handleSubmit = (e) => {
     if (zipRegex.test(zip)) {
       e.preventDefault();
-      submit.current.className = "submit transition"
+      submit.current.className = "submit transition";
       const timer = setTimeout(() => {
         history.push(`/dashboard/${zip}`);
-        e.preventDefault()
+        e.preventDefault();
         console.log("okay");
       }, 1000);
       return () => clearTimeout(timer);

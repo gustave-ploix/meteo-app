@@ -4,14 +4,12 @@ import './title.scss'
 export default function Title (){
 
 
-    const [load, setLoad] = useState(false)
-
-    const title = useRef()
+    const [load, setLoad] = useState(false);
 
     
     window.addEventListener('load', () => {
         
-        setLoad(true)
+        setLoad(true);
 
     })
 

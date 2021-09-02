@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import { 
+import {
     BrowserRouter as Router,
     Switch,
     Route
 } from 'react-router-dom';
 
 import ZipSelection from './pages/ZipSelection';
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard';
 
-import './app.scss'
+import './app.scss';
 
-export default function App (){
+export default function App() {
 
-    const [zip, setZip] = useState()
+    const [zip, setZip] = useState();
 
-    return(
+    return (
 
         <Router>
             <main>
                 <Switch>
                     <Route path="/" exact>
-                        <ZipSelection zip={zip} setZip={setZip}/>
+                        <ZipSelection zip={zip} setZip={setZip} />
                     </Route>
                     <Route path="/dashboard/:zipSlug">
                         <Dashboard />
