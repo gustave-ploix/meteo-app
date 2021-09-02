@@ -5,8 +5,8 @@ import './background.scss'
 export default function Background({ sunDown, sunUp, temp, clouds }) {
 
   const date = new Date();
-//   const hour = date.getHours();
-    const hour = 7
+  const hour = date.getHours();
+// const hour = 4
   
     const cloudPercentage = parseInt(clouds)
     const temperature = parseInt(temp);
@@ -40,17 +40,21 @@ export default function Background({ sunDown, sunUp, temp, clouds }) {
         }
     }
 
-    const night = () => {
-        if (hour >= sunset + 2 && hour <= sunrise) {
-        }
-    }
+   
     
     
     
     if(hour >= sunrise + 2 && hour <= sunset) {
         journey()
         console.log("journey");
-    }else{
+    }else if(   hour === 22|| 
+                hour === 23||
+                hour === 0 ||
+                hour === 1 ||
+                hour === 2 ||
+                hour === 3 ||
+                hour === 4 ||
+                hour === 5){
         classname="night"
     }
 

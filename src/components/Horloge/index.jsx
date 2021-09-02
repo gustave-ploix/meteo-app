@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+import './horloge.scss'
+
 export default function  (){
 
     const [time, setTime] = useState()
@@ -20,7 +22,7 @@ export default function  (){
 
     return(
 
-        <h1>
+        <h1 id="horloge">
             {time}
         </h1>
 

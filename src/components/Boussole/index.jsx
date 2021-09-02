@@ -6,6 +6,8 @@ export default function Boussole (props){
 
     const data = props.children
 
+    const windSpeed = parseInt(data.wind_spd * 3.6)
+
     console.log(data);
 
     return(
@@ -18,7 +20,7 @@ export default function Boussole (props){
         </div>
 
         <div className="informations">
-            <h1>{data.wind_spd * 3.6}Km/h</h1>
+            <h1>le vent souffle à : <br />{windSpeed}Km/h, vers :</h1>
             <h1>{data.wind_cdir_full}</h1>
             <h1></h1>
         </div>

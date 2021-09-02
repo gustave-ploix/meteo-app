@@ -30,13 +30,20 @@ export default function Dashboard() {
   return (
     <>
       <div className="background">
-        <Background temp={data.temp} clouds={data.clouds} sunDown={data.sunset} sunUp={data.sunrise} />
+        <Background
+          temp={data.temp}
+          clouds={data.clouds}
+          sunDown={data.sunset}
+          sunUp={data.sunrise}
+        />
       </div>
       <div id="dashboardPage">
-          <div className="elements">
-            Dashboard for {data.city_name}
-            <Horloge />
-          </div>
+        <div className="elements">
+          <h1>
+              Bienvenue à {data.city_name}, il fait {data.temp}°C
+          </h1>
+          <Horloge />
+        </div>
         <div className="centered">
           <Boussole>{data}</Boussole>
         </div>
