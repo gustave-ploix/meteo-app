@@ -22,7 +22,7 @@ export default function Background({ sunDown, sunUp, temp, clouds }) {
         }else if(cloudPercentage >= 10 && cloudPercentage <= 20) {
             classname="cloudOne"
         }else if(cloudPercentage >= 20 && cloudPercentage <= 30) {
-            classname="cloudThwo"
+            classname="cloudTwo"
         }else if(cloudPercentage >= 30 && cloudPercentage <= 40) {
             classname="cloudThree"
         }else if(cloudPercentage >= 40 && cloudPercentage <= 50) {
@@ -44,7 +44,7 @@ export default function Background({ sunDown, sunUp, temp, clouds }) {
     
     
     
-    if(hour >= sunrise + 2 && hour <= sunset) {
+    if(hour >= sunrise + 2 && hour <= sunset + 3) {
         journey()
         console.log("journey");
     }else if(   hour === 22|| 
