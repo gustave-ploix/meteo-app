@@ -5,7 +5,18 @@ $font: 'Work Sans', sans-serif;
     font-family: $font;
 }
 
-#dashboardPage {
+.notVisible {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0px;
+}
+
+.visible {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
     width: 100%;
     height: 100%;
     overflow: hidden;
@@ -22,4 +33,8 @@ $font: 'Work Sans', sans-serif;
     position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
+
+    h1{
+        color: gray;
+    }
 }

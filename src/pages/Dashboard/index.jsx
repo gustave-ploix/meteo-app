@@ -11,6 +11,7 @@ import Background from "../../components/Background";
 export default function Dashboard() {
   const { zipSlug } = useParams();
   const [data, setData] = useState([]);
+  const [load, setLoad] = useState(false)
 
   const fetch = async () => {
     try {
@@ -25,6 +26,11 @@ export default function Dashboard() {
 
   useEffect(() => {
     fetch();
+
+    const timer = setTimeout(() => {
+      setLoad(true)
+    }, 500)
+    return () => clearTimeout(timer)
   }, []);
 
   return (
@@ -37,7 +43,7 @@ export default function Dashboard() {
           sunUp={data.sunrise}
         />
       </div>
-      <div id="dashboardPage">
+      <div class={load ? "visible" : "notVisible"}>
         <div className="elements">
           <h1>
               Bienvenue à {data.city_name}, il fait {data.temp}°C
