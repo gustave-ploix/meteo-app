@@ -44,7 +44,6 @@ export default function Background({ sunDown, sunUp, clouds }) {
 
     if (hour >= sunrise + 2 && hour <= sunset + 3) {
         journey();
-        console.log("journey");
     } else if (hour === 22 ||
         hour === 23 ||
         hour === 0 ||
@@ -58,9 +57,7 @@ export default function Background({ sunDown, sunUp, clouds }) {
 
 
     return (
-        <div className={`bg ${classname}`}>
-            {/* {classname} */}
-        </div>
+        <div className={`bg ${classname}`}></div>
     )
 
 }

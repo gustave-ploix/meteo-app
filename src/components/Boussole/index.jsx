@@ -8,8 +8,6 @@ export default function Boussole(props) {
     const windSpeed = parseInt(data.wind_spd * 3.6);
 
     const direction = data.wind_dir - 45;
-    console.log(-Math.abs(direction));
-    console.log("normal : " + direction);
 
     const invertRotation = () => {
         if (direction > 0) {
@@ -18,8 +16,6 @@ export default function Boussole(props) {
             return Math.abs(direction);
         }
     };
-
-    console.log(invertRotation());
 
     return (
         <>
