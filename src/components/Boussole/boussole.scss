@@ -27,6 +27,12 @@ $font: 'Work Sans', sans-serif;
     transition: all 1s ease-in-out;
     
     // height
+    // @media(max-height: 1033px) {
+    //     top: 50px;
+    // }
+    // @media(max-height: 880px) {
+    //     top: 100px;
+    // }
     @media(max-height: 700px) {
         top: 100px;
     }
@@ -38,9 +44,9 @@ $font: 'Work Sans', sans-serif;
     }
 
     // width
-    @media(max-width: 520px) {
-        width: 300px;
-        height: 300px;
+    @media(max-width: 540px) {
+        width: 270px;
+        height: 270px;
     }
     @media(max-width: 420px) {
         width: 250px;
@@ -68,9 +74,9 @@ $font: 'Work Sans', sans-serif;
     justify-content: center;
     align-items: center;
 
-    @media(max-width: 520px) {
-        width: 300px;
-        height: 300px;
+    @media(max-width: 540px) {
+        width: 270px;
+        height: 270px;
     }
     @media(max-width: 420px) {
         width: 250px;
@@ -89,7 +95,7 @@ $font: 'Work Sans', sans-serif;
     h1 {
         color: white;
 
-        @media(max-width: 520px) {
+        @media(max-width: 540px) {
             font-size: 1.5em;
         }
         @media(max-width: 420px) {

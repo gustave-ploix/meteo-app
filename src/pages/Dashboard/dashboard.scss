@@ -42,8 +42,12 @@ $font: 'Work Sans', sans-serif;
     @media(max-width: 360px) {
         min-width: 220px;
     }
-
+    @media(max-width: 564px) {
+        margin-top: 25px;
+    }
+    
     h1{
+        font-weight: 100;
         color: gray;
 
         @media(max-width: 900px) {
@@ -53,11 +57,16 @@ $font: 'Work Sans', sans-serif;
             font-size: 1.2em;
         }
         @media(max-width: 564px) {
-            font-size: 0.8em;
+            font-size: 1.1em;
         }
         @media(max-width: 360px) {
-            font-size: 0.9em;
+            font-size: 1em;
         }
+    }
+    span {
+        text-transform: uppercase;
+        color: #FF715B;
+        font-weight: 600;
     }
     .night {
         color: white !important;

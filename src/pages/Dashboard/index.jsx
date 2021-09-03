@@ -61,7 +61,7 @@ export default function Dashboard() {
       <div class={load ? "visible" : "notVisible"}>
         <div className="elements">
           <h1 className={`${timeInformation}`}>
-            Bienvenue à {data.city_name}, il fait {data.temp}°C
+            Bienvenue à <span>{data.city_name}</span>,<br /> il fait <span>{data.temp}°C</span>
           </h1>
           <Horloge timeInformation={timeInformation} />
         </div>
