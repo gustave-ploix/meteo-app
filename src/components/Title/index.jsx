@@ -16,7 +16,7 @@ export default function Title (){
     return(
 
         <h1 className={load ? "title" : "title underlined"}>
-            NUBIBUS&co
+            <span className="nubi">NUBI</span><span className="bus">BUS</span>&co
         </h1>
 
     )

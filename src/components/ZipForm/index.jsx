@@ -22,12 +22,10 @@ export default function ZipForm({ zip, setZip }) {
       const timer = setTimeout(() => {
         history.push(`/dashboard/${zip}`);
         e.preventDefault();
-        console.log("okay");
       }, 1000);
       return () => clearTimeout(timer);
     } else {
       e.preventDefault();
-      console.log("nope");
       setValid(false);
     }
   };
@@ -43,7 +41,7 @@ export default function ZipForm({ zip, setZip }) {
 
       <input className="submit" ref={submit} type="submit" value="=>" />
       <p className={valid ? "invisible" : "visible"}>
-        Veuillez entrer un code postal valide
+        Code postal non valide.
       </p>
     </form>
   );

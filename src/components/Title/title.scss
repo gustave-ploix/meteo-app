@@ -2,9 +2,72 @@
     margin: 0;
     font-size: 3.6em;
     position: relative;
+    top: 50px;
     display: inline;
-    
+    animation: goesUp 1s ease-in-out forwards 1000ms;
+
     @media(max-width: 450px) {
         font-size: 3em;
+    }
+
+    .nubi {
+        color: black;
+        position: relative;
+
+        &::after {
+            content: "";
+            height: 3px;
+            animation: underlineNubi 0.5s ease-in-out forwards;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+        }
+    }
+
+    .bus {
+        color: #FF715B;
+        position: relative;
+
+        &::after {
+            content: '';
+            animation: underlineBus 0.5s ease-in-out 1 forwards 500ms;
+            height: 3px;
+            background-color: #FF715B;
+            position: absolute;
+            bottom: 0px;
+            left: 3px;
+            transition: width 0.5s ease-in-out;
+        }
+
+    }
+}
+
+@keyframes underlineBus {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 190%;
+    }
+}
+
+@keyframes underlineNubi {
+    from {
+        width: 0px;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes goesUp {
+    from {
+        position: relative;
+        top: 50;
+    }
+    to {
+        position: relative;
+        top: 0px;
     }
 }
